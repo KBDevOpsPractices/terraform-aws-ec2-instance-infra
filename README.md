@@ -7,6 +7,14 @@ export AWS_REGION="us-east-1"
 
 ```
 
+### key-pair
+
+```
+ssh-keygen -t rsa 
+
+```
+- Note : ./id_rsa
+
 ### Terraform Commands
 
 ```
