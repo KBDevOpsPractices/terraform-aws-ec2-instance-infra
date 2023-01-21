@@ -12,6 +12,8 @@ export AWS_REGION="us-east-1"
 ```
 ssh-keygen -t rsa 
 
+ssh -i id_rsa ubuntu@[pub_ip_address]
+
 ```
 - Note : ./id_rsa
 
