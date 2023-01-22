@@ -8,4 +8,16 @@ resource "aws_instance" "web-ec2-instance" {
     Name = "aws-devops-tf"
   }
 
+  # Copies the README.md file to /opt/README.md
+  provisioner "file" {
+    source      = "README.md"
+    destination = "/opt/README.md"
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("${path.module}/id_rsa")
+      host        = self.public_ip
+    }
+  }
+
 }
