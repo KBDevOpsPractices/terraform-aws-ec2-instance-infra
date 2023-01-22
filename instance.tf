@@ -2,6 +2,9 @@
 resource "aws_key_pair" "ec2-ssh-key" {
   key_name   = "devops-ec2-ssh-key-tf"
   public_key = file("${path.module}/id_rsa.pub")
+  tags = {
+    Name = "aws-devops-tf"
+  }
 }
 
 resource "aws_instance" "web-ec2-instance" {
@@ -11,7 +14,7 @@ resource "aws_instance" "web-ec2-instance" {
   key_name = aws_key_pair.ec2-ssh-key.key_name
 
   tags = {
-    Name = "devops-tf"
+    Name = "aws-devops-tf"
   }
 
 }
