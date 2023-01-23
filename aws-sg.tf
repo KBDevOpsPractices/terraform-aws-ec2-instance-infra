@@ -1,6 +1,7 @@
 resource "aws_security_group" "security_group_allow_tls" {
   name        = "security_group_allow_tls"
   description = "Allow TLS inbound traffic"
+  tags        = local.common_tags
 
   dynamic "ingress" {
     for_each = var.ports
