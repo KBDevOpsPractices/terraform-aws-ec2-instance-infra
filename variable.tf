@@ -1,16 +1,9 @@
-locals {
-  common_tags = {
-    component = var.component
-    Name      = var.Name
-  }
-}
-
 variable "component" {
   type    = string
   default = "aws-devops-kb"
 }
 
-variable "Name" {
+variable "name" {
   type    = string
   default = "aws-devops-tf"
 }

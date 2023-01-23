@@ -3,7 +3,7 @@
 ```
 export AWS_ACCESS_KEY_ID="anaccesskey"
 export AWS_SECRET_ACCESS_KEY="asecretkey"
-export AWS_REGION="us-east-1"
+export AWS_REGION="region"
 
 ```
 
@@ -21,9 +21,13 @@ ssh -i id_rsa ubuntu@[pub_ip_address]
 
 ```
 terraform init
-terraform plan 
+
+terraform fmt
+
 terraform validate
-terraform apply -var-file="vars/development.tfvars" --auto-approve
-terraform destroy -var-file="vars/development.tfvars" --auto-approve
+terraform plan -var-file="vars/devl.tfvars" --auto-approve
+terraform apply -var-file="vars/devl.tfvars" --auto-approve
+
+terraform destroy -var-file="vars/devl.tfvars" --auto-approve
 
 ```
